@@ -2,56 +2,52 @@ import React, { useState } from "react";
 
 const Main = () => {
   const [order, setOrder] = useState("");
+  const [incident, setIncident] = useState("");
+
+  const handleFocus = (event) => event.target.select();
+
+  console.log(order);
 
   return (
     <div className="w-screen bg-[#121F3D] h-full flex justify-center">
       <div className="w-full max-w-xs flex justify-center align-middle">
         <form className="bg-[#24385b] shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" for="username">
-              Order #
-            </label>
             <input
-              className="bg-transparent shadow appearance-none border rounded w-full py-2 px-3"
+              className=" bg-[#121F3D] rounded w-full py-3 px-3 mb-3 border-hidden font-light focus-visible:outline-none focus-visible:border-sky-500"
               type="text"
-              placeholder="Username"
+              placeholder="Order#"
+              onChange={(e) => setOrder(e.target.value)}
+              onFocus={handleFocus}
+              value={order}
             />
-            <label className="block text-sm font-bold mb-2" for="username">
-              Item ID(s):
-            </label>
             <input
-              className="bg-transparent shadow appearance-none border rounded w-full py-2 px-3"
+              className=" bg-[#121F3D] rounded w-full py-3 px-3 mb-3 border-hidden font-light focus-visible:outline-none focus-visible:border-sky-500"
               type="text"
-              placeholder="Username"
+              placeholder="Item ID(s)"
             />
-            <label className="block text-sm font-bold mb-2" for="username">
-              Reason
-            </label>
             <input
-              className="bg-transparent shadow appearance-none border rounded w-full py-2 px-3"
+              className=" bg-[#121F3D] rounded w-full py-3 px-3 mb-3 border-hidden font-light focus-visible:outline-none focus-visible:border-sky-500"
               type="text"
-              placeholder="Username"
+              placeholder="Reason"
             />
-            <label className="block text-sm font-bold mb-2" for="username">
-              Request
-            </label>
             <input
-              className="bg-transparent shadow appearance-none border rounded w-full py-2 px-3"
+              className=" bg-[#121F3D] rounded w-full py-3 px-3 mb-3 border-hidden font-light focus-visible:outline-none focus-visible:border-sky-500"
               type="text"
-              placeholder="Username"
+              placeholder="Request"
             />
-            <label className="block text-sm font-bold mb-2" for="username">
-              Incident #
-            </label>
             <input
-              className="bg-transparent shadow appearance-none border rounded w-full py-2 px-3"
+              className=" bg-[#121F3D] rounded w-full py-3 px-3 mb-3 border-hidden font-light focus-visible:outline-none focus-visible:border-sky-500"
               type="text"
-              placeholder="Username"
+              placeholder="Incident#"
+              onChange={(e) => setIncident(e.target.value)}
+              onFocus={handleFocus}
+              value={incident}
             />
           </div>
-          <div class="flex items-center justify-between">
+          <div className="flex items-center justify-between">
             <button
-              class="bg-blue-500 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >
               Clear
